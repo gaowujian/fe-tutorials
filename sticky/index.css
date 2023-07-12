@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+div {
+  width: 400px;
+  height: 500px;
+}
+div:nth-child(2n) {
+  background-color: #444;
+}
+div:nth-child(2n + 1) {
+  background-color: #eee;
+}
+
+.container h1 {
+  position: sticky;
+  top: 0;
+  background-color: #444;
+}
