@@ -1,0 +1,75 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgray;
+}
+
+.container {
+  width: 300px;
+  height: 225px;
+  position: relative;
+  /* 溢出隐藏，从而控制可见区域 */
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  /* gap: 8px; */
+  /* 核心点在于里边的container大小是和外层的保持一致，而不是flex的所有元素大小, 所以transform在移动100%的 */
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 底部指示器 */
+.indicator {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 4px;
+}
+.indicator span {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  /* outline: #fff; */
+  border: 1px solid #fff;
+}
+
+.indicator span.active {
+  background-color: #fff;
+}
+
+/* 左右箭头 */
+.arrow {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(180, 180, 180, 0.7);
+}
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translate(0, -50%);
+}
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translate(0, -50%);
+}
