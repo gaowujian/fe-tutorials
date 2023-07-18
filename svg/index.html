@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <script src="index.js"></script>
+    <h2>
+      <a
+        href="https://cloud.tencent.com/developer/article/2100025"
+        target="_blank"
+        >学习链接</a
+      >
+    </h2>
+
+    <pre>
+      相当于svg内的元素都是绝对定位，通过x和y来决定自己的位置
+      rx和ry等价于border radius 分别确认x和y上的半径
+    x: 左上角x轴坐标 
+    y: 左上角y轴坐标
+    width: 宽度
+    height: 高度
+    rx: 圆角，x轴的半径
+    ry: 圆角，y轴的半径 
+   </pre
+    >
+    <svg width="300" height="300" style="border: 1px solid red">
+      <rect width="200" height="100" x="20" y="40" rx="20" ry="40"></rect>
+    </svg>
+    <svg width="300" height="300" style="border: 1px solid red">
+      <circle cx="60" cy="80" r="50"></circle>
+    </svg>
+    <svg width="300" height="300" style="border: 1px solid red">
+      <ellipse cx="100" cy="40" rx="80" ry="30"></ellipse>
+    </svg>
+    <svg width="300" height="300" style="border: 1px solid red">
+      <line x1="30" y1="40" x2="200" y2="180" stroke="blue"></line>
+    </svg>
+    <svg width="300" height="300" style="border: 1px solid red">
+      <polyline
+        points="10 10, 200 80, 230 230"
+        stroke="#000"
+        fill="none"
+      ></polyline>
+    </svg>
+    <svg width="300" height="300" style="border: 1px solid red">
+      <polygon points="10 10, 200 80, 230 230"></polygon>
+    </svg>
+    <h2>所有的svg中线和图形 都可以用最基础的path来表示</h2>
+    <ul>
+      <li>大写字母表示绝对位置，小写字母表示相对位置</li>
+      <li>M 起始点</li>
+      <li>
+        L 50 40 表示绝对位置 50 40 l 50 40表示相对于上一个节点 相对移动50和40
+      </li>
+      <li>
+        H和h 表示 horizontal
+        水平方向上的绝对和相对位置，垂直方向默认和上一个点相同
+      </li>
+      <li>
+        V和v 表示 vertical
+        垂直方向上的绝对和相对位置，垂直方向默认和上一个点相同
+      </li>
+      <li>椭圆弧公式: A(rx, ry, xr, laf, sf, x, y)</li>
+      <li>
+        <a
+          href="https://github.com/kevinsqi/react-circular-progressbar"
+          target="_blank"
+        >
+          react环形进度条
+        </a>
+        这个库中，核心的绘制path路径就采用path的a属性绘制进度
+      </li>
+    </ul>
+    <svg width="300" height="300" style="border: 1px solid red">
+      <path d="M 10 10 V 100 " stroke="blue" fill="red"></path>
+      <path d="M 20 10 v 100 " stroke="blue" fill="red"></path>
+    </svg>
+    <div class="box"></div>
+    <h2>样式设置</h2>
+    <svg width="400" height="400" style="border: 1px solid red">
+      <line
+        x1="30"
+        y1="30"
+        x2="300"
+        y2="30"
+        stroke="blue"
+        stroke-width="10"
+        stroke-dasharray="20 10 30"
+      />
+
+      <line
+        x1="30"
+        y1="90"
+        x2="300"
+        y2="90"
+        stroke="blue"
+        stroke-width="10"
+        stroke-dasharray="20 10 30"
+        stroke-dashoffset="10"
+      />
+    </svg>
+    <ul>
+      <li>fill和fill-opacity等价于 div中的background-color和opacity属性</li>
+      <li>
+        <pre>
+          stroke等价于border-color
+          stroke-width 等价于 border-width 
+          stroke-dasharray 约等于 border-style: dashed;
+          stroke-dasharray: 20 10 30 表示线20缝10线30缝20线10缝30
+        <span style="color:red">  stroke-dashoffset表示偏移量  10 表示左移动  -10表示向右移动</span>
+        </pre>
+      </li>
+    </ul>
+  </body>
+</html>
